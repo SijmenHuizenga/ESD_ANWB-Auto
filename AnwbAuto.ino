@@ -4,6 +4,7 @@
 #include "NonePattern.h"
 #include "StrookPattern.h"
 #include "LinePattern.h"
+#include "LedControl.h"
 
 LedController controller;
 
@@ -62,7 +63,7 @@ String handleCommand(String command){
     return "Speed updated to " + String(sleeptime) + ".";
   }
   if(command.startsWith("shape")){
-    String shape = command.substring(9);
+    String shape = command.substring(6);
     for(int i = 0; i < patternAmount; i++){
         if(shape.startsWith(patterns[i]->getID())){
             selectedPattern = i;
@@ -79,6 +80,7 @@ String handleCommand(String command){
       for(int i = 0; i < patternAmount; i++){
           Serial.println("  + " + patterns[i]->getID());
       }
+      Serial.println("printGraphData - prints all possible patterns in console.");
       return "=============================";
   }
   if(command.startsWith("printGraphData")){
@@ -90,7 +92,7 @@ String handleCommand(String command){
       for(int j = 0; j < 2*controller.getLedAmount(); j++){
         patterns[i]->draw(controller);
         Serial.println(controller.getCurState());
-        delay(1);
+        //delay(1);
       }
     }
     return "=============================";

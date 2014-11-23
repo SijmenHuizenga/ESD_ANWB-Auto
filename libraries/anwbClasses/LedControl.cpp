@@ -1,15 +1,14 @@
 #include "LedControl.h"
 
 LedController::LedController(){
-  pins[0] = 2;
-  pins[1] = 3;
-  pins[2] = 4;
-  pins[3] = 5;
-  pins[4] = 6;
-  pins[5] = 7;
-  pins[6] = 8;
-  pins[7] = 9;
-  pins[8] = 10;
+  pins[0] = 3;
+  pins[1] = 4;
+  pins[2] = 5;
+  pins[3] = 6;
+  pins[4] = 7;
+  pins[5] = 8;
+  pins[6] = 9;
+  pins[7] = 10;
 }
 
 void LedController::initilize(){
@@ -23,7 +22,7 @@ void LedController::setLedOn(int ledNr, boolean onOrOff){
 };
 
 int LedController::getLedAmount(){
-  return sizeof(pins)/sizeof(int);
+  return 8;
 };
 
 String LedController::getCurState(){

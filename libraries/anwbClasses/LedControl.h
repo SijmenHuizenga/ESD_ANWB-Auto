@@ -9,7 +9,7 @@
 
 class LedController{
     private:
-      int pins[9];
+      int pins[8];
     public:
       LedController();
       void initilize();
