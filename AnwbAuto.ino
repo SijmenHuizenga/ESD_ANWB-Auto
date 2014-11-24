@@ -74,7 +74,7 @@ String handleCommand(String command){
   }
   if(command.startsWith("help")){
       Serial.println("=============================");
-      Serial.println("Avalable commands:");
+      Serial.println("Available commands:");
       Serial.println("speed [int] - set speed of the pattern");
       Serial.println("shape [shape name] - set the shape of the pattern. Avalable patterns:");
       for(int i = 0; i < patternAmount; i++){
